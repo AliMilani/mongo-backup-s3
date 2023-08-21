@@ -11,7 +11,7 @@ function createBackupFile() {
     }.zip`;
   return new Promise((resolve, reject) => {
     try {
-      const mongodump = spawn("mongodump.exe", [
+      const mongodump = spawn("mongodump", [
         `--uri=${config.mongoDBUri}`,
         `--archive=${backupFilePath}`,
         "--gzip",
